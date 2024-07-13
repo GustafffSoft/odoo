@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <menuitem name="Gestión SEFI y PEs" id="empleado_sefipe_menu_root"/>
+
+        <menuitem id="empleado_sefipe_menu" parent="empleado_sefipe_menu_root" action="action_empleado_sefipe"/>
+
+        <!-- PRESENCIALIDAD MENU-->
+        <menuitem name="Presencialidad" id="presencialidad_sefipe_menu_root" parent="empleado_sefipe_menu_root"/>
+        <!--VER PRESENCIALIDAD SUB-MENU -->
+        <menuitem id="presencialidad_sefipe_menu" parent="presencialidad_sefipe_menu_root"
+                  action="action_presencialidad_sefipe"/>
+        <!--CAMBIO DE REGLA SUB-MENU -->
+        <menuitem id="cambio_regla_sefipe_menu" parent="presencialidad_sefipe_menu_root"
+                  action="action_cambio_regla_presencialidad_sefipe"/>
+        >
+        <!-- FECCHAS IMPORTANTES MENU-->
+        <menuitem name="Fechas importantes" id="fechas_importantes_sefipe_menu_root"
+                  parent="empleado_sefipe_menu_root"/>
+        <!--VER FECHAS SUB-MENU -->
+        <menuitem name="Ver fechas" id="fechas_importantes_sefipe_menu" parent="fechas_importantes_sefipe_menu_root"
+                  action="action_fechas_importantes_sefipe"/>
+        <!--INSERTAR FECHASD SUB-MENU -->
+        <menuitem name="Insertar fechas" id="insertar_fechas_importantes_sefipe_menu"
+                  parent="fechas_importantes_sefipe_menu_root"
+                  action="action_insertar_fechas_importantes_sefipe"/>
+
+        <menuitem name="Comentarios" id="fechas_comentarios_sefipe_menu_root"
+                  parent="empleado_sefipe_menu_root"
+                  action="action_ver_comentarios_sefipe"
+        />
+
+        <!--<menuitem name="Licencias" id="visualizacion_sefipe_menu_root"
+                  parent="empleado_sefipe_menu_root"
+                  action="action_licencias"
+        /> -->
+
+        <menuitem name="Visualizacion" id="licencias_sefipe_menu_root"
+                  parent="empleado_sefipe_menu_root"
+                  action="action_visualizacion_sefipe"
+        />
+    </data>
+
+
+</odoo>

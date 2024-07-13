@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="calendario_unificado" model="ir.ui.view">
+            <field name="name">Calendario Unificado</field>
+            <field name="model">hr.calendario_unificado</field>
+            <field name="priority" eval="2"/>
+            <field name="arch" type="xml">
+                <calendar string="Visualizacion" create="0" mode="month" date_start="date_from" date_stop="date_to"
+                          hide_time="true" color="tipo_evento">
+                    <field name="tipo_evento"/>
+                    <field name="name"/>
+                    <field name="descripcion"/>
+                    <!--                    <field name="birthday"/>-->
+                </calendar>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_visualizacion_sefipe">
+            <field name="name">Calendario Unificado</field>
+            <field name="res_model">hr.calendario_unificado</field>
+            <field name="view_mode">calendar,search</field>
+        </record>
+
+    </data>
+</odoo>

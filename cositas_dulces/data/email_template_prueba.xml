@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <record id="email_template_employee_reminder" model="mail.template">
+            <field name="name">Recordatorio para Empleados</field>
+            <field name="model_id" ref="hr.model_hr_employee"/>
+            <field name="email_from">{{object.user_id.email or 'gustafff93s@gmail.com'}}</field>
+            <field name="email_to">{{object.work_email}}</field>
+            <field name="subject">Recordatorio de Tareas Pendientes</field>
+            <field name="body_html"><![CDATA[
+        <p>Hola ${object.name},</p>
+        <p>Este es un recordatorio de que el vierenes te tocan las cositas dulces .</p>
+    ]]></field>
+        </record>
+    </data>
+</odoo>

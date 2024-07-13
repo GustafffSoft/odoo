@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="ir_cron_pago" model="ir.cron">
+            <field name="name">Ejecucion automatizada de conteo de presenciales y remotos</field>
+            <field name="model_id" ref="project.model_project_task"/>
+            <field name="code">model._compute_presencial_remoto_count()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">weeks</field>
+            <field name="active" eval="False"/>
+<!--            <field name="priority">10</field> &lt;!&ndash; Prioridad más baja &ndash;&gt;-->
+            <!--            <field name="hour">7</field>-->
+            <!--            <field name="minute">0</field>-->
+            <field name="numbercall">-1</field>
+        </record>
+
+<!--        <record id="ir_cron_procesar_regla" model="ir.cron">-->
+<!--            <field name="name">Procesamiento de reglas</field>-->
+<!--            <field name="model_id" ref="project.model_project_task"/>-->
+<!--            <field name="code">model.aplicar_exception_rule()</field>-->
+<!--            <field name="interval_number">1</field>-->
+<!--            <field name="interval_type">weeks</field>-->
+<!--            <field name="active" eval="False"/>-->
+<!--            <field name="priority">10</field> &lt;!&ndash; Prioridad más alta &ndash;&gt;-->
+<!--            &lt;!&ndash;            <field name="hour">7</field>&ndash;&gt;-->
+<!--            &lt;!&ndash;            <field name="minute">0</field>&ndash;&gt;-->
+<!--            <field name="numbercall">-1</field>-->
+<!--        </record>-->
+
+    </data>
+</odoo>

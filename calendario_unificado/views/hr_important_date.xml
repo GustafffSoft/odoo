@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_important_date_view_form" model="ir.ui.view">
+            <field name="name">hr.important_date.view.form</field>
+            <field name="model">hr.important_date</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                             <field name="employee_id"/>
+                        <field name="name"/>
+                        <field name="date"/>
+                        </group>
+
+                    </sheet>
+<!--                    <footer>-->
+<!--                         <button class="btn btn-primary" name="action_boton" type="object" string="Salvar"/>-->
+<!--                         <button string="Cancelar" class="btn-secondary" special="cancel" data-hotkey="x"/>-->
+<!--                    </footer>-->
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="tree_important_dates_list">
+            <field name="name">Fechas importantes</field>
+            <field name="model">hr.important_date</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="employee_id"/>
+                    <field name="name"/>
+                    <field name="date"/>
+                </tree>
+            </field>
+        </record>
+        <record id="my_calendario" model="ir.ui.view">
+            <field name="name">fechas.importantes</field>
+            <field name="model">hr.important_date</field>
+            <field name="priority" eval="2"/>
+            <field name="arch" type="xml">
+                <calendar string="Fechas importantes" create="0" mode="month" date_start="date" date_stop="date"
+                          color="employee_id"
+                          hide_time="true">
+                    <field name="name"/>
+                    <field name="date"/>
+                    <field name="employee_id"/>
+                    <!--                    <field name="birthday"/>-->
+                </calendar>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_insertar_fechas_importantes_sefipe">
+            <field name="name">Fechas importantes</field>
+            <field name="res_model">hr.important_date</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_fechas_importantes_sefipe">
+            <field name="name">Fechas importantes</field>
+            <field name="res_model">hr.important_date</field>
+            <field name="view_mode">calendar</field>
+        </record>
+
+
+    </data>
+</odoo>

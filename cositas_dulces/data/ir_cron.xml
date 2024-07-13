@@ -1,0 +1,34 @@
+<odoo>
+    <!--    <odoo> y <data noupdate="1">: Encierran el contenido del -->
+    <!--        archivo XML. noupdate="1" indica que los registros dentro-->
+    <!--        de este bloque no deben actualizarse automáticamente al actualizar el módulo.-->
+    <data noupdate="1">
+        <!--        <record id="ir_cron_deadline_reminder" model="ir.cron">: Define-->
+        <!--        un nuevo cron job en el modelo ir.cron. id es el identificador único -->
+        <!--        para este cron job.-->
+        <record id="ir_cron_deadline_reminder" model="ir.cron">
+            <!--            nombre del cron que aparecera en la interfaz de odoo-->
+            <field name="name">Enviar recordatorios de deadline</field>
+            <!-- Vincula el cron job con el modelo project.task -->
+            <field name="model_id" ref="project.model_project_task"/>
+            <!-- Indica que se ejecutará código Python -->
+            <field name="state">code</field>
+            <!-- El código Python que se ejecutará -->
+            <field name="code">model.send_deadline_reminders()</field>
+            <!--             Define el usuario bajo el cual se ejecutará el cron job. -->
+            <!--            base.user_root es generalmente el usuario administrador.-->
+            <field name="user_id" ref="base.user_root"/>
+            <!-- Activa el cron job para que se ejecute según su programación -->
+            <field name="active">True</field>
+            <!-- Configura la frecuencia del cron job -->
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <!-- Indica que el cron job se ejecutará indefinidamente -->
+            <field name="numbercall">-1</field>
+            <!--             Determina si el cron job debe ejecutar llamadas
+            que se perdieron mientras estaba-->
+            <!--            inactivo. False significa que no se ejecutarán las llamadas perdidas.-->
+            <field name="doall">False</field>
+        </record>
+    </data>
+</odoo>

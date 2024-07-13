@@ -1,0 +1,22 @@
+<odoo>
+    <record id="view_task_kanban_employee" model="ir.ui.view">
+        <field name="name">project.task.kanban.employee</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//kanban" position="attributes">
+                <attribute name="default_order">sequence asc</attribute>
+            </xpath>
+            <xpath expr="//kanban/templates/t[@t-name='kanban-box']/div" position="inside">
+                <div class="oe_kanban_details">
+                    <strong class="oe_kanban_record_title">
+                        <field name="employee_id" widget="many2one"/>
+                    </strong>
+                    <div class="oe_kanban_date">
+                        <field name="date_deadline"/>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

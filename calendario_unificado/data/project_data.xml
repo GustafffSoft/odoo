@@ -1,0 +1,40 @@
+<odoo>
+    <data noupdate="1">
+        <!-- Crear el proyecto  -->
+        <record id="project_presencialidad_hr" model="project.project">
+            <field name="name">Presencialidad</field>
+            <field name="is_favorite">True</field>
+            <!-- Otros campos necesarios para configurar tu proyecto -->
+        </record>
+<!--     <record id="project_remoto_hr" model="project.project">-->
+<!--            <field name="name">Remoto</field>-->
+<!--            <field name="is_favorite">True</field>-->
+<!--            &lt;!&ndash; Otros campos necesarios para configurar tu proyecto &ndash;&gt;-->
+<!--        </record>-->
+<!--     <record id="project_cambio_regla_hr" model="project.project">-->
+<!--            <field name="name">Cambio Regla</field>-->
+<!--            <field name="is_favorite">True</field>-->
+<!--            &lt;!&ndash; Otros campos necesarios para configurar tu proyecto &ndash;&gt;-->
+<!--        </record>-->
+
+
+        <!-- Crear una etapa (grupo) dentro del proyecto ' -->
+        <record id="project_task_stage_presencial" model="project.task.type">
+            <field name="name">Presencial</field>
+            <field name="project_ids" eval="[(4, ref('project_presencialidad_hr'))]"/>
+            <!-- Otros campos necesarios para la etapa -->
+        </record>
+
+        <record id="project_task_stage_remoto" model="project.task.type">
+            <field name="name">Remoto</field>
+            <field name="project_ids" eval="[(4, ref('project_presencialidad_hr'))]"/>
+            <!-- Otros campos necesarios para la etapa -->
+        </record>
+
+        <record id="project_task_stage_cambio_regla" model="project.task.type">
+            <field name="name">Cambio de Regla</field>
+            <field name="project_ids" eval="[(4, ref('project_presencialidad_hr'))]"/>
+            <!-- Otros campos necesarios para la etapa -->
+        </record>
+    </data>
+</odoo>

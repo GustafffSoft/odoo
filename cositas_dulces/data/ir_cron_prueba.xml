@@ -1,0 +1,16 @@
+<odoo>
+    <data noupdate="1">
+        <record id="ir_cron_email_reminder_prueba" model="ir.cron">
+            <field name="name">Enviar correos cada 1 minuto prueba</field>
+            <field name="model_id" ref="project.model_project_task"/>
+            <field name="state">code</field>
+            <field name="code">model.send_deadline_reminders_prueba()</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="active">True</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="doall">False</field>
+        </record>
+    </data>
+</odoo>

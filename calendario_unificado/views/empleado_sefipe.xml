@@ -1,0 +1,43 @@
+<odoo>
+    <data>
+        <record id="view_employee_form" model="ir.ui.view">
+            <field name="name">hr.employee.view.form.inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='hr_settings']" position="after">
+                    <page name="test_2" string="Presencialidad">
+                        <form>
+                            <group string="Estableciendo presencialidad">
+                                <field name="lunes"/>
+                                <field name="martes"/>
+                                <field name="miercoles"/>
+                                <field name="jueves"/>
+                                <field name="viernes"/>
+                            </group>
+                        </form>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="action_empleado_sefipe">
+            <field name="name">Empleados</field>
+            <field name="res_model">hr.employee</field>
+            <!--field name="view_mode">kanban,tree,form</field-->
+            <field name="view_mode">tree,form</field>
+            <!--field name="context">{'default_is_company': False}</field-->
+        </record>
+
+
+        <record model="ir.actions.act_window" id="action_cambio_regla_presencialidad_sefipe">
+            <field name="name">Cambio de Regla</field>
+            <field name="res_model">hr.exception.rule.presencialidad</field>
+            <field name="view_mode">form,tree</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,28 @@
+<odoo>
+    <data>
+        <!-- Plantilla de correo electrónico para recordatorios de deadline
+        Define un nuevo registro en el modelo mail.template. id es el identificador
+        único para esta plantilla.-->
+        <record id="email_template_deadline_reminder" model="mail.template">
+<!--            <field name="name">: Especifica el nombre de la plantilla de correo electrónico. -->
+<!--            Este nombre es utilizado en la interfaz de usuario para identificar la plantilla.-->
+            <field name="name">Recordatorio de Deadline</field>
+<!--            <field name="email_from">: Define la dirección de correo electrónico -->
+<!--            del remitente. ${(user.email or '')|safe} utiliza el correo electrónico -->
+<!--            del usuario actual (si está disponible) como remitente. |safe es un-->
+<!--            filtro que asegura que el contenido se interprete de manera segura.-->
+            <field name="email_from">${(user.email or '')|safe}</field>
+                        <!-- Asunto del correo electrónico -->
+            <field name="subject">Recordatorio: Tarea "${object.name}"</field>
+                        <!-- Vincula la plantilla con el modelo project.task -->
+            <field name="model_id" ref="project.model_project_task"/>
+            <field name="body_html">
+                <![CDATA[
+                <p>Hola ${object.employee_id.name},</p>
+                <p>Este es un recordatorio de que la fecha límite de la tarea <strong>${object.name}</strong> es hoy.</p>
+                <!-- Puedes personalizar más el cuerpo del correo aquí -->
+                ]]>
+            </field>
+        </record>
+    </data>
+</odoo>

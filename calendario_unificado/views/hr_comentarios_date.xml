@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <record id="calendario_comentarios" model="ir.ui.view">
+            <field name="name">Comentarios</field>
+            <field name="model">hr.comentarios_date</field>
+            <field name="priority" eval="2"/>
+            <field name="arch" type="xml">
+                <calendar string="Comentarios" create="0" mode="month" date_start="date" date_stop="date"
+                          color="employee_id"
+                          hide_time="true">
+                    <field name="name"/>
+                    <field name="date"/>
+                    <field name="employee_id"/>
+                </calendar>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="action_ver_comentarios_sefipe">
+            <field name="name">Comentarios</field>
+            <field name="res_model">hr.comentarios_date</field>
+            <field name="view_mode">calendar,tree,form</field>
+        </record>
+        <record model="ir.ui.view" id="tree_comentarios_dates_list">
+            <field name="name">Comentarios</field>
+            <field name="model">hr.comentarios_date</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="employee_id"/>
+                    <field name="name"/>
+                    <field name="date"/>
+                </tree>
+            </field>
+        </record>
+
+    </data>
+</odoo>

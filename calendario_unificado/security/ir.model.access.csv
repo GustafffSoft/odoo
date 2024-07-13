@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_employee,hr.employee,hr.model_hr_employee,,1,1,1,1
+access_hr_proyectos_especiales_task,hr_proyectos_especiales.task,model_project_task,base.group_user,1,1,1,1
+access_hr_exception_rule_presencialidad,hr.exception.rule.presencialidad,model_hr_exception_rule_presencialidad,,1,1,1,1
+access_hr_important_date,hr.important.date,model_hr_important_date,,1,1,1,1
+access_hr_comentarios_date,hr.comentarios.date,model_hr_comentarios_date,,1,1,1,1
+access_hr_calendario_unificado,hr.calendario.unificado,model_hr_calendario_unificado,,1,1,1,1

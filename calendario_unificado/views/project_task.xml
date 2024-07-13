@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_presencialidad_calendar" model="ir.ui.view">
+            <field name="name">project.view_task_all_calendar.inherit</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_calendar"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='personal_stage_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <!--                <xpath expr="//field[@name='personal_stage_id']" position="before">-->
+                <!--                    <button name="compute_presencial_remoto_count" string="Crear Tarea" type="object" class="oe_highlight"/>-->
+                <!--                </xpath>-->
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_presencialidad_sefipe">
+            <field name="name">Distribucion</field>
+            <field name="res_model">project.task</field>
+            <field name="view_mode">calendar,tree</field>
+        </record>
+    </data>
+</odoo>
